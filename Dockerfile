@@ -1,6 +1,6 @@
 FROM alpine/git AS clone
 WORKDIR /app
-RUN git clone https://srs5600/webtestApp.git /app
+RUN git clone https://github.com/srs5600/webtestApp.git /app
 
 #RUN echo "$PWD"
 
