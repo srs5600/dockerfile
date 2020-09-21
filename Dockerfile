@@ -1,7 +1,7 @@
 FROM alpine/git AS clone
 WORKDIR /app
-#RUN git clone https://d2361a4bd1b4442ce9fc5136802498ee0f65d6f3:x-oauth-basic@github.com/srs5600/webtestApp.git /app
-RUN git clone https://srs5600:d2361a4bd1b4442ce9fc5136802498ee0f65d6f3@github.com/srs5600/webtestApp.git /app
+RUN git clone https://srs5600/webtestApp.git /app
+
 #RUN echo "$PWD"
 
 
