@@ -1,7 +1,7 @@
 pipeline {
     agent any 	
 	environment {
-		                  echo "Setting environment variables..."
+		                  echo 'Setting environment variables...'
 		PROJECT_ID = 'cr-lab-sshastri-1408204213'
                 CLUSTER_NAME = 'cluster-1'
                 LOCATION = 'eus-central1-c'
@@ -17,14 +17,14 @@ pipeline {
            
 	   stage('Build') { 
                 steps {
-                  echo "Build a clean package..."
+                  echo 'Build a clean package...'
                   sh 'mvn clean package'
                 }
            }
 	    
 	   stage('Test') { 
 		steps {
-	          echo "Testing..."
+	          echo 'Testing...'
 		  sh 'mvn test'
 		}
 	   }
@@ -48,7 +48,7 @@ pipeline {
 	   
            stage('Deploy to K8s on GCP') { 
                 steps{
-                   echo "Deployment started ..."
+                   echo 'Deployment started ...'
 		   sh 'ls -ltr'
 		   sh 'pwd'
 		   sh "sed -i 's/tagversion/${env.BUILD_ID}/g' deployment.yaml"
