@@ -16,7 +16,7 @@ spec:
   spec:
    containers:
    - name: mywebtestAppk8
-     image: sadananrshastri/customtomcat:tagversion
+     image: sadanandrshastri/customtomcat:tagversion
      ports:
      - containerPort: 8080
 
