@@ -13,20 +13,7 @@ pipeline {
                   checkout scm
 		}	
            }
-           
-	   stage('Build') { 
-                steps {
-                  echo 'Build a clean package...'
-                  sh 'mvn clean package'
-                }
-           }
-	    
-	   stage('Test') { 
-		steps {
-	          echo 'Testing...'
-		  sh 'mvn test'
-		}
-	   }
+
 	   stage('Build Docker Image') { 
 		steps {
 		   sh 'whoami'
