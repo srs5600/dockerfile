@@ -1,7 +1,6 @@
 pipeline {
     agent any 	
 	environment {
-		                  echo 'Setting environment variables...'
 		PROJECT_ID = 'cr-lab-sshastri-1408204213'
                 CLUSTER_NAME = 'cluster-1'
                 LOCATION = 'eus-central1-c'
