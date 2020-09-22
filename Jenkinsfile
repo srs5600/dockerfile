@@ -16,7 +16,7 @@ pipeline {
 
 	   stage('Build Docker Image') { 
 		steps {
-		   sh 'whoami'
+
                    script {
 		      customImage = docker.build("sadanandrshastri/customtomcat:${env.BUILD_ID}")
                    }
