@@ -28,4 +28,8 @@ RUN echo "$PWD"
 #COPY  --from=build /home/app/target/webtestApp-0.0.1-SNAPSHOT.war /usr/local/tomcat/webapps/
 COPY  --from=build /home/app/target/webtestApp.war /usr/local/tomcat/webapps/
 #COPY  --from=build /home/app/ /usr/local/tomcat/temp/
+RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+RUN chmod +x ./kubectl
+RUN mv ./kubectl /usr/local/bin
+
 EXPOSE 8080
