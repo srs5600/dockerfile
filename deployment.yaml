@@ -15,10 +15,11 @@ spec:
     app: mywebtestApp
   spec:
    containers:
-   - name: mywebtestAppk8
+   - name: mywebtestApp
      image: sadanandrshastri/customtomcat:latest
      ports:
      - containerPort: 8080
+       name: mywebtestApp
 
 ---
 apiVersion: v1
