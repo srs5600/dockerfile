@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: mywebtestApp
-        image: registry.hub.docker.com/sadanandrshastri/customtomcat:latest
+        image: sadanandrshastri/customtomcat:latest
         ports:
         - containerPort: 8080
 ---
