@@ -1,35 +1,32 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mywebtestApp
-  labels:
-    app: mywebtestApp
+  name: mywebtestapp-deployment
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
-      app: mywebtestApp
+      app: mywebtestapp
   template:
     metadata:
       labels:
-        app: mywebtestApp
+        app: mywebtestapp
     spec:
       containers:
-      - name: mywebtestApp
-        image: sadanandrshastri/customtomcat:latest
+      - name: mywebtestapp
+        image: sadanandrshastri/customtomcat:tagversion
         ports:
-        - containerPort: 8080
+        - containerPort: 8080    
 ---
-        apiVersion: v1
-        kind: Service
-        metadata:
-          name: hello
-          labels:
-            app: hello
-        spec:
-          ports:
-          - port: 80
-            targetPort: 8080
-          type: LoadBalancer
-          selector:
-            app: mywebtestApp
+apiVersion: v1
+kind: Service
+metadata:
+  name: mywebtestapplb
+spec:
+    type: LoadBalancer
+    selector:
+      app: mywebtestapp
+    ports:
+      - protocol: TCP
+        port: 8888
+        targetPort: 8080      
