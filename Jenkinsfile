@@ -4,7 +4,7 @@ pipeline {
 		PROJECT_ID = 'cr-lab-sshastri-1408204213'
                 CLUSTER_NAME = 'cluster-1'
                 LOCATION = 'us-central1-c'
-                CREDENTIALS_ID = 'kubernetes'		
+                CREDENTIALS_ID = 'gcpk8creds'		
 	}
 	
     stages {	
