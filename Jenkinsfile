@@ -18,7 +18,7 @@ pipeline {
 		steps {
 
                    script {
-		      customImage = docker.build("sadanandrshastri/customtomcat:${env.BUILD_ID}","--no-cache")
+		      customImage = docker.build("--no-cache"," -t sadanandrshastri/customtomcat:${env.BUILD_ID}",)
                    }
                 }
 	   }
